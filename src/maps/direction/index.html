@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps JavaScript API 지도 호출</title>
+
+  <link rel="stylesheet" href="../../css/full-body.css">
+  <link rel="stylesheet" href="../../css/use-full-map.css">
+</head>
+<style>
+  .box {
+    position: absolute;
+    top: 24px; left: 50%; transform: translateX(-50%);
+    padding: 4px;
+    background-color: #fff;
+  }
+
+  #warnings_panel {
+    position: absolute;
+    bottom: 24px; left: 50%; transform: translateX(-50%);
+    padding: 4px;
+    background-color: #fff;
+  }
+</style>
+
+<body>
+  <div id="map"></div>
+
+  <div class="box">
+    <strong>Start: </strong>
+    <select id="start" onchange="calcRoute();">
+      <option value="penn station, new york, ny">Penn Station</option>
+      <option value="grand central station, new york, ny">Grand Central Station</option>
+      <option value="625 8th Avenue New York NY 10018">Port Authority Bus Terminal</option>
+      <option value="staten island ferry terminal, new york, ny">Staten Island Ferry Terminal</option>
+      <option value="101 E 125th Street, New York, NY">Harlem - 125th St Station</option>
+    </select>
+    <strong>End: </strong>
+    <select id="end" onchange="calcRoute();">
+      <option value="260 Broadway New York NY 10007">City Hall</option>
+      <option value="W 49th St & 5th Ave, New York, NY 10020">Rockefeller Center</option>
+      <option value="moma, New York, NY">MOMA</option>
+      <option value="350 5th Ave, New York, NY, 10118">Empire State Building</option>
+      <option value="253 West 125th Street, New York, NY">Apollo Theatre</option>
+      <option value="1 Wall St, New York, NY">Wall St</option>
+    </select>
+  </div>
+
+  <div id="warnings_panel">
+  </div>
+
+  <script src="./app.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9HBU5ITlJSL-4fXr7wnx4TSicAWDMiH8&callback=initMap"></script>
+</body>
+
+</html>
