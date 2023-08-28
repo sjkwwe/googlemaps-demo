@@ -24,4 +24,6 @@ VITE v4.4.7  ready in 384 ms
   ➜  Network: use --host to expose
   ➜  press h to show help
 
-![Index][https://ibb.co/PWZ6c1G]
+### 인덱스 페이지
+
+![Index](./img/index.png)
