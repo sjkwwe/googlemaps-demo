@@ -4,7 +4,7 @@ Google Maps Platform Demo created with html, css, js
 
 ### API_KEY 변경
 
-./src/config 폴더의 config.js의 `export const API_KEY = '##USE YOUR API KEY## ` 부분을 자신의 Google Maps API Key 로 변경합니다.
+.env 파일의 VITE_API_KEY=\*\*\*ADD_YOUR_API\*\*\* 부분을 자신의 Google Maps API Key 로 변경합니다.
 
 ### node_module 설치
 
