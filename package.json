@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.16.2"
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "@googlemaps/routing": "^1.0.0"
   }
 }

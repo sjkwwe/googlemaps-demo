@@ -4,9 +4,11 @@ var directionsService;
 var stepDisplay;
 var markerArray = [];
 
+
 async function initMap() {
   directionsService = new google.maps.DirectionsService();
 
+  
   var manhattan = new google.maps.LatLng(40.7711329, -73.9741874);
   var mapOptions = {
     zoom: 13,
@@ -42,7 +44,6 @@ function calcRoute() {
       destination: end,
       travelMode: 'WALKING'
   };
-
   // Route the directions and pass the response to a
   // function to create markers for each step.
   directionsService.route(request, function(response, status) {
