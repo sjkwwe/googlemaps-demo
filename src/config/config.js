@@ -1,1 +1,0 @@
-export default API_KEY = "AIzaSyD9HBU5ITlJSL-4fXr7wnx4TSicAWDMiH8";

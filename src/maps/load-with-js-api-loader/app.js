@@ -4,7 +4,7 @@ let map
 
 const loader = new Loader({
   
-  apiKey: "AIzaSyD9HBU5ITlJSL-4fXr7wnx4TSicAWDMiH8",
+  apiKey: import.meta.env.VITE_API_KEY,
   version: "weekly",
 });
 
