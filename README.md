@@ -27,3 +27,7 @@ VITE v4.4.7  ready in 384 ms
 ### 인덱스 페이지
 
 ![Index](./img/index.png)
+
+### 주의
+
+AutoComplete 테스트 시, bindTo 설정으로 지도에 표시되는 부분만 검색 되어집니다.
