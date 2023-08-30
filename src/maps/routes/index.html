@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <title>JavaScript API | Route </title>
+        <meta name="robots" content="noindex">
+        <meta charset="utf-8">
+        <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="iframe" content="framebox">
+        <meta name="enable_widgets" content="true">
+        <link rel="stylesheet" href="../../css/frame.css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons&display=block">
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vbad4fd6eb290ad214822e7a397f826be8dbcc36ca2a922ba48f41fb14286829c/developers/css/app.css">
+    </head>
+    <div id="demo">
+        <div id="wrapper">
+          <div class="row fullwidth wrapper-container">
+            <div class="alert" id="alert">
+              <p>error</p>
+              <a href="#" class="close">&times;</a>
+            </div>
+            <div class="large-4 small-12 columns sidebar">
+              <div class="control-panel">
+      
+                <section>
+                  <h2>Input locations</h2>
+                  <p>Click the toggle button on the right of the input fields to switch between Address as Waypoint and Location/Place_ID as Waypoint</p>
+               
+                  <!--Origin -->
+                  <div class="row">
+                    <div class="small-9 medium-9 large-9 columns">
+                      <label class="text">Origin<span>*</span> </label>
+                      <div class="inputgroup">
+                        <input type="text" id="origin" name="origin" placeholder="Enger an address">
+                        <div class="switch input-toggle">
+                          <input type="checkbox" name="origin_input_toggle" id="origin_input_toggle" data-type="origin">
+                          <label for="origin_input_toggle"></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="small-3 medium-3 large-3 columns side">
+                      <label for="heading_org" class="text">Heading</label>
+                      <div class="inputgroup">
+                        <input type="text" id="heading_org" name="heading_org" value="">
+                      </div>
+                    </div>
+                    <div class="small-12 medium-12 large-12 columns">
+                      <input type="checkbox" id="origin_stopover" name="origin_stopover">
+                      <label for="origin_stopover">Stopover</label>
+                      <input type="checkbox" id="side_of_road_org" name="side_of_road_org">
+                      <label for="side_of_road">Side of Road</label>
+                    </div>
+                  </div>
+      
+                  <hr />
+      
+                  <!-- Destination -->
+                  <div class="row">
+                    <div class="small-9 medium-9 large-9 columns">
+                      <label class="text">Destination<span>*</span> </label>
+                      <div class="inputgroup">
+                        <input type="text" id="destination" name="destination" placeholder="Enter an address">
+                        <div class="switch input-toggle">
+                          <input type="checkbox" name="des_input_toggle" id="des_input_toggle" data-type="destination">
+                          <label for="des_input_toggle"></label>
+                        </div>
+                      </div>
+                    </div>
+                      <div class="small-3 medium-3 large-3 columns side">
+                        <label for="heading_des" class="text">Heading</label>
+                        <div class="inputgroup">
+                          <input type="text" id="heading_des" name="heading_des" value="">
+                        </div>
+                      </div>
+                      <div class="small-12 medium-12 large-12 columns">
+                        <input type="checkbox" id="destination_stopover" name="destination_stopover">
+                        <label for="destination_stopover">Stopover</label>
+                        <input type="checkbox" id="side_of_road_des" name="side_of_road_des">
+                        <label for="side_of_road">Side of Road</label>
+                      </div>
+                  </div>
+                </section>
+                
+      
+                <section>
+                  <!-- Travel Mode -->
+                  <div class="row">
+                    <div class="small-12 medium-4 large-12 columns">
+                      <h2>Travel Mode</h2>
+                      <select name="travel_mode" id="travel_mode">
+                        <option value="drive">Drive</option>
+                        <option value="walk">Walk</option>
+                        <option value="bicycle">Bicycle</option>
+                        <option value="two_wheeler">Two Wheeler (two-wheeled motorized vehicle)</option>
+                        <option value="transit">Transit</option>
+                      </select>
+                    </div>
+                  </div>
+      
+                  <div class="row" id="transit_options">
+                    <div class="small-12 medium-6 large-6 columns">
+                      <h3>Transit Modes</h3>
+                      <ul id="transitModes">
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="bus" value="bus" id="bus" checked>
+                          <label for="bus">Bus</label>
+                        </li>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="subway" value="subway" id="subway" checked>
+                          <label for="subway">Subway</label>
+                        </li>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="train" value="train" id="train" checked>
+                          <label for="train">Train</label>
+                        </li>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="light_rail" value="light_rail" id="light_rail" checked>
+                          <label for="light_rail">Light rail</label>
+                        </li>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="rail" value="rail" id="rail" checked>
+                          <label for="rail">Rail</label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="small-12 medium-6 large-6 columns">
+                      <h3>Transit Routing Preference</h3>
+                      <select name="transit_preference" id="transitPreference">
+                        <option value="TRANSIT_ROUTING_PREFERENCE_UNSPECIFIED">No preference</option>
+                        <option value="less_walking">Less walking</option>
+                        <option value="fewer_transfers">Fewer transfers</option>
+                      </select>
+                    </div>
+                  </div>
+                </section>
+      
+                <!-- Route Options-->
+                <section>
+                  <h2>Route Options</h2>
+                  <div class="row">
+                    <div class="small-12 medium-6 large-12 columns">
+                      <div class="row">
+                        <h3 class="small-3 medium-3 large-3 columns">Polyline Quality</h3>
+                        <select class="small-9 medium-9 large-9 columns" name="polyline_quality" id="polyline_quality">
+                          <option value="high_quality">High quality</option>
+                          <option value="overview">Overview</option>
+                        </select>
+                      </div>
+                      <div class="row">
+                        <h3 class="small-3 medium-3 large-3 columns">Traffic Awareness</h3>
+                        <select class="small-9 medium-9 large-9 columns" name="traffic" id="traffic">
+                          <option value="traffic_unaware">Traffic unaware</option>
+                          <option value="traffic_aware">Traffic aware</option>
+                          <option value="traffic_aware_optimal">Traffic aware optimal (highest latency)</option>
+                        </select>
+                      </div>
+      
+                      <div class="row">
+                          <div class="switch round small">
+                            <h3>Traffic Aware Polyline</h3>
+                            <div>
+                              <input type="checkbox" name="traffic_aware_polyline" id="traffic_aware_polyline" disabled>
+                              <label for="traffic_aware_polyline"></label>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                     
+      
+                    <div class="small-12 medium-6 large-12 columns last-column">
+                      <h3>Route Modifiers(Optional)</h3>
+                      <ul>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="avoid_tolls" value="avoid_tolls" id="avoid_tolls">
+                          <label for="avoid_tolls">Avoid tolls</label>
+                        </li>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="avoid_highways" value="avoid_highways" id="avoid_highways">
+                          <label for="avoid_highways">Avoid highways</label>
+                        </li>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="avoid_ferries" value="avoid_ferries" id="avoid_ferries">
+                          <label for="avoid_ferries">Avoid ferries</label>
+                        </li>
+                        <li class="small-12 large-12">
+                          <input type="checkbox" name="avoid_indoor" value="avoid_indoor" id="avoid_indoor">
+                          <label for="avoid_indoor">Avoid indoor</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+      
+      
+                <!-- Reference routes-->
+                <section>
+                  <h2>Reference routes</h2>
+                  <div class="row">
+                    <div class="small-12 medium-12 large-12 columns">
+                      <div class="switch round small">
+                        <h3>Alternative Routes</h3>
+                        <div>
+                          <input type="checkbox" name="alternative_routes" id="alternative_routes">
+                          <label for="alternative_routes"></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <hr />
+      
+                  <div class="row">
+                    <div class="small-12 medium-6 large-12 columns">
+                      <div class="switch round small">
+                        <h3>Eco-friendly Routes</h3>
+                        <div>
+                          <input type="checkbox" name="eco_routes" id="eco_routes">
+                          <label for="eco_routes"></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="small-12 medium-6 large-12 columns" id="enginetype">
+                      <h3>Emission Type</h3>
+                      <select name="emissiontype" id="emissiontype" class="withinfo" disabled>
+                        <option value="gasoline">Gasoline</option>
+                        <option value="electric">Electric</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="diesel">Diesel</option>
+                      </select>
+                    </div>
+                  </div>
+                </section>
+                <div class="row">
+                  <div>
+                    <div><a href="#" class="small button" id="btn-submit">Get directions</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="large-8 small-12 columns map-container">
+              <div class="map-canvas">
+                <div id="map"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="infowindow-alert">
+          <p>Lat/Lng are copied to clipboard</p>
+        </div> 
+        <script src="https://maps.googleapis.com/maps/api/js?key=%VITE_API_KEY%&v=beta&libraries=marker,geometry,places&callback=initMap"></script>
+      </div>
+      <script src="./initMap.js"></script>
+        </body>
+      </html>
+</html>
