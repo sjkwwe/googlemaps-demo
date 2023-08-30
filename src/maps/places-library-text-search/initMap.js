@@ -31,7 +31,7 @@ $input_find_place.addEventListener('keyup', async (e) => {
   if(e.keyCode === 13) {
     const request = {
       query: e.target.value,
-      fields: ['name', "geometry"]
+      fields: ['name', "geometry", "formatted_address"]
     }
     service = new google.maps.places.PlacesService(map);
     service.findPlaceFromQuery(request, (results, status) => {
